@@ -34,7 +34,7 @@ module Simplabs
       #   if the language is not supported.
       #
       def highlight(options = {})
-        command = "pygmentize -f html -O nowrap=true -O encoding=utf-8 -l #{@language}"
+        command = "pygmentize -f html -O nowrap=true -l #{@language}"
         IO.popen(command, mode = 'r+') do |pygments|
           pygments << @code
           pygments.close_write
