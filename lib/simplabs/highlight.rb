@@ -163,7 +163,7 @@ module Simplabs
         raise ArgumentError.new('Either pass a srting containing the code or a block, not both!') if !code.nil? && block_given?
         raise ArgumentError.new('Pass a srting containing the code or a block!') if code.nil? && !block_given?
         code ||= yield
-        Simplabs::Highlight.highlight(language, code)
+        Simplabs::Highlight.highlight(language, code).html_safe
       end
 
     end
